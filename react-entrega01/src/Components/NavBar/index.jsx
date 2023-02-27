@@ -1,13 +1,13 @@
 import Lista from "../ItemListContainer";
 import CartWidget from "../CartWidget";
-import { RxBox } from "react-icons/rx";
+import { MdDirectionsBike } from "react-icons/md";
 function NavBar() {
     return (
         <div>        
            <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                    <RxBox/>
+                    <a class="navbar-brand" href="#">                   
+                    <MdDirectionsBike/>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,8 +23,7 @@ function NavBar() {
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#">Ofertas</a>
-                        </li>
-                        
+                        </li>                      
                         <CartWidget cant={"10"}/>
                     </ul>
                     </div>
