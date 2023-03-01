@@ -1,36 +1,50 @@
-import Lista from "../ItemListContainer";
-import CartWidget from "../CartWidget";
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../CartWidget';
 import { MdDirectionsBike } from "react-icons/md";
 function NavBar() {
-    return (
-        <div>        
-           <nav className="navbar navbar-expand-lg bg-light">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">                   
-                    <MdDirectionsBike size={35}/>
-                    </a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <Lista nombre="Bicicletas"/>
-                        <li className="nav-item">
-                        <a className="nav-link" href="#">Accesorios</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="#">Ofertas</a>
-                        </li>                      
-                        <CartWidget cant={"5"}/>
-                    </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-    )
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#"><MdDirectionsBike size={(50)}/></Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1">Inicio</Nav.Link>
+            <Nav.Link href="#action2">Accesorios</Nav.Link>
+            <Nav.Link href="#action2">Ofertas!</Nav.Link>
+            <NavDropdown title="Bicicletas" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">TREK</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                VAIRO
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action5">
+                SPL
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            {/* <Button variant="outline-success">Search</Button> */}
+          </Form>
+          <CartWidget cantidad ="5"/>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
-export default NavBar
+
+export default NavBar;

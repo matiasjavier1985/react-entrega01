@@ -1,15 +1,16 @@
-import {BsCart2} from "react-icons/bs";
-function CartWidget({cant}) {
-    return(
-        <li className="nav-item mt-2">                      
-            <button type="button" className="btn btn-body position-relative">
-            <BsCart2 size={25}/>                 
-            <span className="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
-            {cant}
-            </span>
-            </button>
-        </li>
-    
-    )
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
+import {BsCart3} from "react-icons/bs";
+function CartWidget({cantidad}) {
+  return (
+    <Nav.Link href="#carrito">
+        <Button variant="transparent">
+        <BsCart3 size={(25)}/><Badge bg="secondary">{cantidad}</Badge>
+           
+        </Button>
+    </Nav.Link>
+  );
 }
-export default CartWidget
+
+export default CartWidget;
